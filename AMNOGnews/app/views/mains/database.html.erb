@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Skc Newsfeed</title>
+  </head>
+  <header>
+  <section>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+           <a class="navbar-brand" href="#">Skc ANMOG</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html.erb">Newsfeed</a></li>
+            <li><a href="database.html.erb">Data Base</a></li>
+            <li><a href="show.html.erb">Search</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+  </section>
+    <h1 class="h2">Data Base</h1>
+  </header>
+
+  <section>
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Number</th>
+                  <th>Drug Name</th>
+                  <th>Brand Name</th>
+                  <th>Manufacturer</th>
+                  <th>Field of Application</th>
+                  <th>Orphan Drug</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% @mains.each do |main| %>
+                  <tr>
+                      <td><%= main.number %></td>
+                      <td><%= main.drug_name %></td>
+                      <td><%= main.brand_name %></td>
+                      <td><%= main.manufacturer %></td>
+                      <td><%= main.field_of_application %></td>
+                      <td><%= main.orphan_drug %></td>
+                  </tr>
+              <% end %>
+          </tbody>
+      </table>
+  </section>
+</html>
